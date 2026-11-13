@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100d1b">
+<title>THE UNKNOWN FILE — Capítol 01</title>
+<style>
+:root{--bg:#100d1b;--panel:#1b1629;--panel2:#241d35;--ink:#f5f0ff;--muted:#b8accb;--purple:#b78cff;--pink:#ff79c6;--green:#8ff0bd;--line:#403451;--red:#ff8d9b}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+body{margin:0;background:radial-gradient(ellipse at 15% 0%,#30204b 0,transparent 42%),radial-gradient(ellipse at 100% 30%,#24153a 0,transparent 35%),var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(920px,calc(100% - 32px));margin:auto;padding:34px 0 64px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;color:var(--muted);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.status{border:1px solid var(--line);border-radius:999px;padding:6px 11px;color:var(--green)}
+.hero{padding:58px 0 34px;text-align:center}
+.kicker{color:var(--purple);font-weight:700;letter-spacing:.22em;font-size:.75rem}
+h1{font-size:clamp(2.2rem,7vw,4.5rem);line-height:1.02;letter-spacing:-.055em;margin:12px 0}
+h1 span{color:var(--purple);text-shadow:0 0 28px #b78cff55}
+.lead{max-width:650px;margin:18px auto;color:var(--muted);font-size:1.05rem}
+.progress{height:7px;background:#332942;border-radius:99px;overflow:hidden;margin:22px auto 0;max-width:440px}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--pink));transition:width .35s}
+.progress-label{font-size:.75rem;color:var(--muted);margin-top:8px}
+.panel{background:linear-gradient(145deg,#211a31ee,#171322ee);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,32px);margin:18px 0;box-shadow:0 18px 55px #0003}
+.panel h2{margin:0 0 8px;font-size:1.5rem}
+.eyebrow{font-size:.72rem;letter-spacing:.16em;color:var(--pink);font-weight:800}
+.muted{color:var(--muted)}
+.rule{border-top:1px solid var(--line);margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}
+.card{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:15px;min-height:118px}
+.card strong{display:block;color:var(--purple);margin-bottom:7px}
+label{display:block;font-size:.9rem;font-weight:650;margin:14px 0 6px}
+input{width:100%;background:#100d1b;border:1px solid #59486f;color:var(--ink);border-radius:11px;padding:12px 13px;outline:none}
+input:focus{border-color:var(--purple);box-shadow:0 0 0 3px #b78cff22}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{border:0;border-radius:11px;padding:11px 17px;font-weight:750;background:linear-gradient(100deg,#a879ef,#d18bdf);color:#160f22}
+.btn.secondary{background:#302640;color:var(--ink);border:1px solid var(--line)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.feedback{min-height:26px;margin-top:12px;font-weight:650}
+.good{color:var(--green)}.bad{color:var(--red)}
+.hint{display:none;margin-top:12px;padding:12px 14px;border-left:3px solid var(--purple);background:#2a2039;border-radius:0 10px 10px 0;color:#e7dcf5}
+.fragment{display:inline-flex;align-items:center;justify-content:center;min-width:56px;height:56px;padding:0 12px;border:1px solid #735a91;border-radius:13px;background:#2b2040;color:#e8d7ff;font-size:1.6rem;font-weight:900;letter-spacing:.08em}
+.fragments{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0}
+.locked{opacity:.48;filter:saturate(.5);pointer-events:none;user-select:none}
+.soundrow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.sound{background:#261e37;border:1px solid var(--line);border-radius:14px;padding:16px 10px;color:var(--ink);text-align:center}
+.sound .symbol{font-size:1.8rem;display:block;color:var(--purple)}
+.sound small{display:block;color:var(--muted);margin-top:4px}
+.sound.played{border-color:var(--green);box-shadow:inset 0 0 0 1px #8ff0bd33}
+.final{display:none;text-align:center;border-color:#8565a9;background:radial-gradient(ellipse at top,#3a2852,#1b1629 65%)}
+.final h2{font-size:clamp(2rem,7vw,3.5rem);color:#d6baff;letter-spacing:.03em}
+.stamp{display:inline-block;border:1px solid #9875bb;border-radius:8px;padding:5px 10px;color:#d6baff;font-size:.72rem;letter-spacing:.15em}
+footer{text-align:center;color:#837694;font-size:.78rem;margin-top:30px}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.card{min-height:auto}.soundrow{gap:7px}.sound{padding:13px 6px}.top{align-items:flex-start}.hero{padding-top:42px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><span>CLASSIFIED GIFT PROJECT / 001</span><span class="status">● SISTEMA ACTIU</span></div>
+  <header class="hero">
+    <div class="kicker">CAPÍTOL 01 · THE UNKNOWN FILE</div>
+    <h1>GIFT NOT <span>FOUND</span></h1>
+    <p class="lead">S'ha detectat un regal ocult. El document s'ha dividit en tres fragments protegits. Resol les proves, recupera les paraules i reconstrueix el missatge.</p>
+    <div class="progress"><span id="progressBar"></span></div>
+    <div class="progress-label" id="progressLabel">0 de 3 arxius desbloquejats</div>
+  </header>
+
+  <section class="panel">
+    <div class="eyebrow">MISSION BRIEFING</div>
+    <h2>Abans de començar...</h2>
+    <p class="muted">No necessites cap coneixement especial: observa, relaciona idees i escolta. Pots demanar una pista si et quedes encallat/da. El sistema comprovarà cada resposta.</p>
+  </section>
+
+  <section class="panel" id="puzzle1">
+    <div class="eyebrow">FILE 01 / THE PONY FILES</div>
+    <h2>Friendship is information.</h2>
+    <p class="muted">Relaciona cada descripció amb el personatge correcte de <em>My Little Pony</em>. Escriu els noms en l'ordre indicat.</p>
+    <div class="grid">
+      <div class="card"><strong>01 — La DJ</strong>Porta auriculars i és coneguda per punxar música.</div>
+      <div class="card"><strong>02 — La grangera</strong>És una experta en pomes i porta barret de vaquer.</div>
+      <div class="card"><strong>03 — La princesa</strong>Està relacionada amb la nit i la lluna.</div>
+    </div>
+    <label for="pony1">Personatge 01</label><input id="pony1" autocomplete="off" placeholder="Escriu el nom...">
+    <label for="pony2">Personatge 02</label><input id="pony2" autocomplete="off" placeholder="Escriu el nom...">
+    <label for="pony3">Personatge 03</label><input id="pony3" autocomplete="off" placeholder="Escriu el nom...">
+    <div class="actions"><button class="btn" onclick="checkPony()">Validar respostes</button><button class="btn secondary" onclick="toggleHint('hint1')">Necessito una pista</button></div>
+    <div class="hint" id="hint1">La primera també es coneix com a DJ Pon-3 (nom real de dues paraules), la segona forma part de la família Apple, i la tercera és la germana de Celestia.</div>
+    <div class="feedback" id="feedback1" aria-live="polite"></div>
+    <div class="fragments" id="fragment1" hidden><span class="fragment">V</span><span class="fragment">A</span><span class="fragment">L</span><span class="good">FRAGMENT RECUPERAT</span></div>
+  </section>
+
+  <section class="panel locked" id="puzzle2" aria-disabled="true">
+    <div class="eyebrow">FILE 02 / THE FOX FREQUENCY</div>
+    <h2>Find the artist.</h2>
+    <p class="muted">Una transmissió musical ha deixat una empremta. Qui és l'artista que busquem?</p>
+    <div class="card"><strong>PISTA DE TRANSMISSIÓ</strong>El seu nom combina un animal astut amb un cognom. És productor i artista d'electrònica, conegut per temes com <em>Dreamland</em> i <em>All Eyes on Me</em>.</div>
+    <label for="fox">Nom de l'artista</label><input id="fox" autocomplete="off" placeholder="Artista + cognom...">
+    <div class="rule"></div>
+    <p class="muted">Ara desxifra el codi. Cada número correspon a una lletra: A=1, B=2, C=3...</p>
+    <div class="fragments"><span class="fragment">16</span><span class="fragment">5</span><span class="fragment">18</span></div>
+    <label for="foxcode">Paraula descodificada</label><input id="foxcode" autocomplete="off" placeholder="Escriu la paraula...">
+    <div class="actions"><button class="btn" onclick="checkFox()">Desxifrar arxiu</button><button class="btn secondary" onclick="toggleHint('hint2')">Necessito una pista</button></div>
+    <div class="hint" id="hint2">L'animal en anglès és "Fox" i el cognom comença per "S". Per al codi, compta la posició de cada número a l'alfabet (16 = P...).</div>
+    <div class="feedback" id="feedback2" aria-live="polite"></div>
+    <div class="fragments" id="fragment2" hidden><span class="fragment">P</span><span class="fragment">E</span><span class="fragment">R</span><span class="good">FRAGMENT RECUPERAT</span></div>
+  </section>
+
+  <section class="panel locked" id="puzzle3" aria-disabled="true">
+    <div class="eyebrow">FILE 03 / DROP THE BASS</div>
+    <h2>Listen. Feel the drop. Guess the word.</h2>
+    <p class="muted">S'han recuperat tres clips d'una transmissió dubstep. Escolta'ls en ordre i descobreix quina paraula formen.</p>
+    <div class="soundrow">
+      <button class="sound" id="sound1" onclick="playClip(1)"><span class="symbol">▶</span><strong>CLIP 01</strong><small>Escolta la lletra</small></button>
+      <button class="sound" id="sound2" onclick="playClip(2)"><span class="symbol">▶</span><strong>CLIP 02</strong><small>Feel the bass drop</small></button>
+      <button class="sound" id="sound3" onclick="playClip(3)"><span class="symbol">▶</span><strong>CLIP 03</strong><small>Escolta la lletra</small></button>
+    </div>
+    <p class="muted" style="font-size:.85rem">Consell: activa el so del dispositiu. El clip 2 és un efecte de baix electrònic.</p>
+    <label for="bassAnswer">Quina paraula formen?</label><input id="bassAnswer" autocomplete="off" placeholder="Escriu la paraula...">
+    <div class="actions"><button class="btn" onclick="checkBass()">Enviar resposta</button><button class="btn secondary" onclick="toggleHint('hint3')">Necessito una pista</button></div>
+    <div class="hint" id="hint3">La veu pronuncia dues lletres en anglès (al Clip 01 i al Clip 03). Ignora el baix del mig i junta-les per formar un article en català.</div>
+    <div class="feedback" id="feedback3" aria-live="polite"></div>
+    <div class="fragments" id="fragment3" hidden><span class="fragment">U</span><span class="fragment">N</span><span class="good">FRAGMENT RECUPERAT</span></div>
+  </section>
+
+  <section class="panel final" id="finalPanel">
+    <div class="stamp">ALL FILES DECRYPTED · 100%</div>
+    <h2>UN VAL PER UN...</h2>
+    <p>Enhorabona! Has superat la primera fase de la investigació.</p>
+    <p class="muted">Ara ja saps que no estàs davant d'un regal convencional. Tens un val, però encara no saps per a què.</p>
+    <div class="rule"></div>
+    <p><strong>EL SEGÜENT ARXIU ESTÀ BLOQUEJAT.</strong></p>
+    <p class="muted">La segona part de la investigació arribarà d'aquí a dues setmanes.</p>
+    <p style="color:var(--purple);font-weight:800;letter-spacing:.12em">UNTIL THEN... KEEP YOUR EYES OPEN.</p>
+  </section>
+  <footer>THE SECRET GIFT PROJECT · CONFIDENTIAL · 001</footer>
+</div>
+<script>
+const unlocked = [false,false,false];
+function norm(s){return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim().toLowerCase().replace(/\s+/g,' ')}
+function toggleHint(id){const el=document.getElementById(id);el.style.display=el.style.display==='block'?'none':'block'}
+function setFeedback(id,msg,good=false){const el=document.getElementById(id);el.textContent=msg;el.className='feedback '+(good?'good':'bad')}
+function unlock(n){
+  unlocked[n-1]=true;
+  document.getElementById('fragment'+n).hidden=false;
+  if(n<3){const next=document.getElementById('puzzle'+(n+1));next.classList.remove('locked');next.setAttribute('aria-disabled','false')}
+  const count=unlocked.filter(Boolean).length;
+  document.getElementById('progressBar').style.width=(count/3*100)+'%';
+  document.getElementById('progressLabel').textContent=count+' de 3 arxius desbloquejats';
+  if(count===3){document.getElementById('finalPanel').style.display='block';document.getElementById('finalPanel').scrollIntoView({behavior:'smooth',block:'center'})}
+}
+function checkPony(){
+  const a=norm(document.getElementById('pony1').value),b=norm(document.getElementById('pony2').value),c=norm(document.getElementById('pony3').value);
+  if(a==='vinyl scratch'&&b==='applejack'&&c==='luna'){setFeedback('feedback1','Correcte! Has recuperat el primer fragment: VAL.',true);unlock(1)}
+  else setFeedback('feedback1','Encara no. Revisa els personatges i l’ordre de les tres descripcions.');
+}
+function checkFox(){
+  const artist=norm(document.getElementById('fox').value),code=norm(document.getElementById('foxcode').value);
+  if((artist==='fox stevenson'||artist==='fox')&&code==='per'){setFeedback('feedback2','Freqüència identificada. Segon fragment recuperat: PER.',true);unlock(2)}
+  else setFeedback('feedback2','La transmissió no coincideix. Comprova el nom de l’artista i el codi numèric.');
+}
+let audioCtx;
+function ctx(){if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();return audioCtx}
+function tone(freq,start,duration,type='sine',gain=.12){
+ const c=ctx(),o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.setValueAtTime(freq,c.currentTime+start);g.gain.setValueAtTime(.0001,c.currentTime+start);g.gain.exponentialRampToValueAtTime(gain,c.currentTime+start+.025);g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+start+duration);o.connect(g);g.connect(c.destination);o.start(c.currentTime+start);o.stop(c.currentTime+start+duration+.03);
+}
+function sayLetter(letter){
+ const utter=new SpeechSynthesisUtterance(letter);utter.lang='en-US';utter.rate=.78;utter.pitch=.9;speechSynthesis.cancel();speechSynthesis.speak(utter);
+}
+function playClip(n){
+ const btn=document.getElementById('sound'+n);btn.classList.add('played');
+ if(n===1){sayLetter('U')}
+ if(n===2){const c=ctx();tone(90,0,.65,'sawtooth',.2);tone(55,.08,.85,'sine',.22);tone(165,.18,.22,'square',.045);tone(82,.38,.45,'sawtooth',.13)}
+ if(n===3){sayLetter('N')}
+}
+function checkBass(){
+ const answer=norm(document.getElementById('bassAnswer').value);
+ if(answer==='un'){setFeedback('feedback3','BOOM! Últim fragment recuperat: UN.',true);unlock(3)}
+ else setFeedback('feedback3','No és aquesta paraula. Escolta els clips en ordre i torna-ho a provar.');
+}
+document.querySelectorAll('input').forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter'){const section=el.closest('.panel');const btn=section.querySelector('.btn:not(.secondary)');if(btn)btn.click()}}));
+</script>
+</body>
+</html>
